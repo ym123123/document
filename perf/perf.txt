@@ -1,0 +1,6 @@
+查看malloc 函数详情
+perf probe -V malloc
+用di寄存器存储bytes的值
+perf probe -x /lib/x86_64-linux-gnu/libc.so.6 --add "malloc bytes=%di"
+查看malloc的返回值
+perf probe -x  /lib/x86_64-linux-gnu/libc.so.6 malloc_ret='malloc%return $retval'
