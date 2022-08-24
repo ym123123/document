@@ -8,3 +8,15 @@ off-cpu  生成火焰图
 https://www.brendangregg.com/blog/2015-02-26/linux-perf-off-cpu-flame-graph.html
 perf 学习
 https://www.brendangregg.com/blog/2015-02-26/linux-perf-off-cpu-flame-graph.html
+当需要打印多个libc参数是
+
+x86_64汇编语言函数通过rdi、rsi、rdx、rcx、r8、r9（edi、esi、edx、ecx、r8、r9）传递。即：
+
+1个参数: rdi（edi）
+2个参数: rdi、rsi（edi、rsi）
+3个参数: rdi、rsi、rdx（edi、esi、edx）
+4个参数: rdi、rsi、rdx、rcx（edi、esi、edx、ecx）
+5个参数: rdi、rsi、rdx、rcx、r8（edi、esi、edx、ecx、r8）
+6个参数: rdi、rsi、rdx、rcx、r8、r9（edi、esi、edx、ecx、r8、r9）
+当参数个数小于等于6个时, 使用寄存器rdi,rsi,rdx,rcx,r8,r9。从第7个参数开始通过栈传递, 顺序为从右往左入栈。
+
