@@ -1,0 +1,6 @@
+swig 生成golang 服务swig -c++ -go -intgosize 64 -cgo xxx.i 需要添加特定的cgo 才可以
+swig c++ string 需要添加一个特定的String 类， 用于代替这些std::string 
+c++ 其他类型， 如 std::vector< std::vecotr< std::string > > 需要使用别名
+'''
+%template 别名 std::vector<xxxx>
+'''
