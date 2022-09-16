@@ -19,4 +19,4 @@ x86_64汇编语言函数通过rdi、rsi、rdx、rcx、r8、r9（edi、esi、edx�
 5个参数: rdi、rsi、rdx、rcx、r8（edi、esi、edx、ecx、r8）
 6个参数: rdi、rsi、rdx、rcx、r8、r9（edi、esi、edx、ecx、r8、r9）
 当参数个数小于等于6个时, 使用寄存器rdi,rsi,rdx,rcx,r8,r9。从第7个参数开始通过栈传递, 顺序为从右往左入栈。
-
+可以使用gdb 调试相关程序 list *(get+0xb0) 可以得到是那一行
