@@ -10,7 +10,7 @@ perf 学习
 https://www.brendangregg.com/blog/2015-02-26/linux-perf-off-cpu-flame-graph.html
 当需要打印多个libc参数是
 //打印详情, 这个可以打印的更加详细，把行号打印出来, 具体用 gdb ./main, list *(main+0xdb)
-sudo perf record -e probe_libc:malloc_return__return -aRg --call-graph dwarf -p 7445 sleep 5
+sudo perf record -e probe_libc:malloc_return__return -ag --call-graph dwarf -p 7445 sleep 5
 
 x86_64汇编语言函数通过rdi、rsi、rdx、rcx、r8、r9（edi、esi、edx、ecx、r8、r9）传递。即：
 
