@@ -1,2 +1,3 @@
 1: 更新插件， 先开发插件，然后调用reload 把配置插件同步到etcd
 2: 关于重试， 需要在ngx_tpl 中把需要重试的配置proxy_next_upstream 配置上才可以， 不然第一次失败不会重试， 减少失败次数.
+3:对于apisix-controler, 可以通过修改pkg/providers/translation$ grep -r "GetNameByIP" 来配置相关pod的权重， 主要通过k8s annotations来修改。
